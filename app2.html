@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الحسابات</title>
+<script>
+function calculate() {
+    var inputNumber = parseFloat(document.getElementById("numberInput").value);
+    if (!isNaN(inputNumber)) {
+        if (inputNumber !== 0) {
+            var resultDiv8 = inputNumber / 8;
+            var resultDiv4 = inputNumber / 4;
+            var resultDiv2 = inputNumber / 2;
+            document.getElementById("resultDiv8").textContent = "التمن: " + resultDiv8;
+            document.getElementById("resultDiv4").textContent = "الربع: " + resultDiv4;
+            document.getElementById("resultDiv2").textContent = "النص: " + resultDiv2;
+        } else {
+            document.getElementById("resultDiv8").textContent = "لا يمكن قسم على الصفر.";
+            document.getElementById("resultDiv4").textContent = "";
+            document.getElementById("resultDiv2").textContent = "";
+        }
+    } else {
+        document.getElementById("resultDiv8").textContent = "برجاء إدخال رقم صحيح.";
+        document.getElementById("resultDiv4").textContent = "";
+        document.getElementById("resultDiv2").textContent = "";
+    }
+}
+</script>
+</head>
+<body>
+<h1>حساب الأرقام</h1>
+<label for="numberInput">أدخل رقمًا: </label>
+<input type="text" id="numberInput">
+<button onclick="calculate()">احسب</button>
+<div id="resultDiv8"></div>
+<div id="resultDiv4"></div>
+<div id="resultDiv2"></div>
+</body>
+</html>
