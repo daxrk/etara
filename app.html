@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الحسابات</title>
+<script>
+function calculate() {
+    var inputNumber = parseFloat(document.getElementById("numberInput").value);
+    if (!isNaN(inputNumber)) {
+        var result = inputNumber * 8 * 4 * 2;
+        document.getElementById("resultDiv8").textContent = " الكيلو : " + (inputNumber * 8);
+        document.getElementById("resultDiv4").textContent = "النص : " + (inputNumber * 4);
+        document.getElementById("resultDiv2").textContent = " الربع: " + (inputNumber * 2);
+    } else {
+        document.getElementById("resultDiv8").textContent = "برجاء إدخال رقم صحيح.";
+        document.getElementById("resultDiv4").textContent = "";
+        document.getElementById("resultDiv2").textContent = "";
+        document.getElementById("resultTotal").textContent = "";
+    }
+}
+</script>
+</head>
+<body>
+<h1>حساب الأرقام</h1>
+<label for="numberInput">أدخل رقمًا: </label>
+<input type="text" id="numberInput">
+<button onclick="calculate()">احسب</button>
+<div id="resultDiv8"></div>
+<div id="resultDiv4"></div>
+<div id="resultDiv2"></div>
+</body>
+</html>
